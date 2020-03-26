@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Person]
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[FirstName] NVARCHAR(32) NOT NULL,
+	[LastName] NVARCHAR(32) NOT NULL,
+	[Created] DATETIMEOFFSET NOT NULL,
+	[GroupId] INT NOT NULL, 
+    CONSTRAINT [FK_Person_Group] FOREIGN KEY ([GroupId]) REFERENCES [Group]([Id])
+)
